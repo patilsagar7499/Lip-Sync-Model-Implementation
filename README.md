@@ -2,7 +2,7 @@
 
 This repository contains a **Google Colab Notebook** to implement **Wav2Lip** for lip-syncing an image with an audio file. It also includes steps for converting text to speech using Python.
 
-## 🚀 **Collab Preliminaries**
+## 🚀 **Colab Preliminaries**
 
 Before starting, make sure you have access to **Google Colab** and **Google Drive** to store necessary files.
 
