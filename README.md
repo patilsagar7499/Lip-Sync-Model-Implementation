@@ -55,12 +55,6 @@ Before starting, make sure you have access to **Google Colab** and **Google Driv
    !pip install opencv-python==4.5.5.64 opencv-contrib-python==4.5.5.64
    ```
 
----  
-
-## 🎙 **Converting Text to Audio**  
-
-Before running Wav2Lip, generate an **audio file** from text using **EdgeTTS (Microsoft Edge Text-to-Speech)**:  
-
 ---
 
 ## 🎙 **Converting Text to Audio**
