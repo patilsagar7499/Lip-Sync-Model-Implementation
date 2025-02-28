@@ -116,7 +116,8 @@ Run Wav2Lip to generate a lip-synced video:
 !cd Wav2Lip && python inference.py \
     --checkpoint_path checkpoints/wav2lip.pth \
     --face "../sample_data/input_photo.png" \
-    --audio "../sample_data/input_audio.wav"
+    --audio "../sample_data/input_audio.wav"\
+    --fps 30 --pads 0 10 0 0 --nosmooth 
 ```
 
 ---
