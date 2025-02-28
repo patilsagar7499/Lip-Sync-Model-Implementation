@@ -55,22 +55,59 @@ Before starting, make sure you have access to **Google Colab** and **Google Driv
    !pip install opencv-python==4.5.5.64 opencv-contrib-python==4.5.5.64
    ```
 
+---  
+
+## 🎙 **Converting Text to Audio**  
+
+Before running Wav2Lip, generate an **audio file** from text using **EdgeTTS (Microsoft Edge Text-to-Speech)**:  
+
 ---
 
 ## 🎙 **Converting Text to Audio**
 
-Before running Wav2Lip, generate an **audio file** from text using **gTTS (Google Text-to-Speech)**:
+Before running Wav2Lip, generate an **audio file** from text using **EdgeTTS (Microsoft Edge Text-to-Speech)**:
 
 ```python
-from gtts import gTTS
-text = "Hello! This is a test audio for lip-syncing."
-tts = gTTS(text, lang='en')
-tts.save("input_audio.wav")
+!pip install edge-tts nest_asyncio
+
+import edge_tts
+import asyncio
+import nest_asyncio
+
+nest_asyncio.apply()
+
+text = """Namaste Mathangi! My name is Anika, and I’m here to guide you through managing your credit card dues.
+
+Mathangi, as of today, your credit card bill shows an amount due of INR 5,053, which needs to be paid by 31st December 2024.
+
+Missing this payment could lead to two significant consequences:
+
+First, a late fee will be added to your outstanding balance.
+
+Second, your credit score will be negatively impacted, which may affect your future borrowing ability.
+
+Make your payment by clicking the link here...
+
+Pay through UPI or bank transfer.
+
+Thank you!"""
+
+async def generate_audio():
+    tts = edge_tts.Communicate(text, voice="en-IN-NeerjaNeural", rate="+5%", volume="+3%")
+    await tts.save("/content/sample_data/input_audio.mp3")
+
+# Run the async function inside an already running event loop
+asyncio.get_event_loop().run_until_complete(generate_audio())
+
+print("Audio saved successfully!")
 ```
 
-This will generate an `input_audio.wav` file.
+This will generate an `input_audio.mp3` file with high-quality neural TTS. 🎧
 
 ---
+
+
+
 
 ## 🛠 **Implementation!**
 
